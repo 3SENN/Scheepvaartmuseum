@@ -7,11 +7,32 @@ export class Controller {
     //# is a private field in Javascript
     #contentViewHtml
     #navigationViewHtml
+    #sidebarViewHtml
+    #dashboardheaderViewHtml
+    #dashboardViewHtml
 
     constructor() {
         //within the templateContent the HTML will be loaded
         this.#contentViewHtml = document.querySelector(".content");
         this.#navigationViewHtml = document.querySelector(".navigation");
+        this.#sidebarViewHtml = document.querySelector(".sidebar");
+        this.#dashboardheaderViewHtml = document.querySelector(".dashboard-header");
+        this.#dashboardViewHtml = document.querySelector(".dashboard");
+    }
+
+
+    async loadHtmlIntoSidebar(htmlFile){
+        return await this.#fetchHtmlView(htmlFile, false, this.#sidebarViewHtml)
+    }
+
+    async loadHtmlIntoDashboardHeader(htmlFile){
+        return await this.#fetchHtmlView(htmlFile, false, this.#dashboardheaderViewHtml)
+    }
+
+
+    async loadHtmlIntoDashboard(htmlFile){
+        console.log(this.#dashboardViewHtml)
+        return await this.#fetchHtmlView(htmlFile, false, this.#dashboardViewHtml)
     }
 
     /**
@@ -22,6 +43,8 @@ export class Controller {
     async loadHtmlIntoNavigation(htmlFile) {
         return await this.#fetchHtmlView(htmlFile, true)
     }
+
+
 
     /**
      * Load an html file specifically into .content of index.html

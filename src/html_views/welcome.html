@@ -1,10 +1,186 @@
-<div class="container">
-    <div class="row justify-content-md-center">
-        <section class="col text-center gx-2">
-            <h1 class="mt-4">Welkom <span class="name"></span>, bij het enige echte PAD framework 2.0</h1>
-            <p class="lead">Je hebt framework succesvol opgezet als je deze pagina ziet! Happy coding :)</p>
-            <p>Succesvol JSON ontvangen van de back-end(rooms example data):</p>
-            <code class="example-response"></code>
-        </section>
+<div class="container-welcome">
+    <header class=" py-5" id="headerWelcome">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center justify-content-center">
+                <div class="col-lg-8 col-xl-7 col-xxl-6">
+                    <div class="my-5 text-center text-xl-start">
+                        <h1 class="display-5 fw-bolder text-white mb-2">Het Scheepvaartmuseum Dashboard</h1>
+                        <p class="lead fw-normal text-white-50 mb-4">Bekijk de real-time data van ons dashboard.</p>
+                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                            <a class="btn btn-primary btn-lg px-4 me-sm-3btn btn-outline-light btn-lg px-4" id="dashboardButton" href="#dashboard">Dashboard</a>
+                            <a class="btn btn-outline-light btn-lg px-4" href="#features">Meer informatie</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="../assets/img/scheepsvaartmuseumgebouw.jpg" alt="..."></div>
+            </div>
+        </div>
+    </header>
+    <div class="py-5" id="quote-box">
+        <div class="container px-5 my-5">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-10 col-xl-7">
+                    <div class="text-center">
+                        <div class="text-light fs-4 mb-4 fst-italic"> "Samen maken we Het Scheepvaartmuseum duurzaam!"</div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="...">
+                            <div class="text-light fw-bold">
+                                Gerald Hubers
+                                <span class="text-light fw-bold text-primary mx-1">/</span>
+                                Gebouw Beheerder
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="py-5" id="features">
+        <div class="container px-5 my-5">
+            <div class="row gx-5">
+                <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="text-light fw-bolder mb-0">Op koers naar een <br>eco-positief museum!</h2>
+
+                    <div class="card-body mt-3">
+                        <img class="img-fluid" src="../assets/img/Screenshot_2022-06-02_at_14.08.28-removebg-preview.png">
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row gx-5 row-cols-1 row-cols-md-2">
+                        <div class="col mb-5 h-100">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                            <h2 class="h5">Klimaat</h2>
+                            <p class="mb-0">Voor het klimaat in het museum wordt gebruik gemaakt van een Warmte Koude Opslag (WKO).
+                                Ruim 30% van het totale energieverbruik komt van de opgewekte hernieuwbare energie (WKO).</p>
+                        </div>
+                        <div class="col mb-5 h-100">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                            <h2 class="h5">Duurzaamheids-certificering</h2>
+                            <p class="mb-0">Voor het gebouw is het duurzaamheidscertificaat BREEAM behaald en beoordeeld met 3 sterren "Very Good".</p>
+                        </div>
+                        <div class="col mb-5 mb-md-0 h-100">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                            <h2 class="h5">Windenergie</h2>
+                            <p class="mb-0">Het museum maakt gebruik van groene stroom, waarbij de elektriciteit wordt opgewekt uit hernieuwbare energiebronnen. Het Scheepsvaartmuseum maakt gebruik van 100% windenergie.</p>
+                        </div>
+                        <div class="col h-100">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                            <h2 class="h5">Waterbesparing</h2>
+                            <p class="mb-0">Het waterverbruik wordt constant gemonitord. Meer dan 75% van het sanitair en de waterverbruikende apparatuur is voorzien van waterbesparende stopkranen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container px-5 my-5">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-8 col-xl-6">
+                    <div class="text-center">
+                        <h2 class="fw-bolder">Doelstellingen</h2>
+                        <p class="lead fw-normal text-muted mb-5">Het scheepvaartmuseum 2021 doelstelling + prestatiemetingen</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row gx-5">
+                <div class="col-lg-4 mb-5">
+                    <div class="card h-100 shadow border-0">
+                        <div style="width:100%;height:0;padding-bottom:100%;position:relative;"><object data="https://giphy.com/embed/THfFrPPb0hGLNP4WOr" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></object></div>
+                        <div class="card-body p-4 row">
+                            <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Prestatiemeting</h5></a>
+                            <p class="card-text mb-0">De doelstellingen voor 2021 zijn gericht op energiereductie en het monitoren van het
+                                energieverbruik.<br> Reductie van het elektraverbruik van 2%
+                                ten opzichte van 2021.<br> Reductie van het gasverbruik van 2% ten
+                                opzichte van 2021. </p>
+                        </div>
+                        <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                            <div class="d-flex align-items-end justify-content-between">
+                                <div class="d-flex align-items-center">
+                                   <div class="small">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-5">
+                    <div class="card h-100 shadow border-0">
+                        <div style="width:100%;height:0;padding-bottom:100%;position:relative;"><object data="https://giphy.com/embed/SsBEjki7QYC1OG3W0N" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></object></div>
+                        <div class="card-body p-4 row">
+                            <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Transport en Vliegverkeer</h5></a>
+                            <p class="card-text mb-0">Het woon-werkverkeer verminderen door thuiswerken te
+                                stimuleren middels een duurzaam thuiswerkbeleid
+                                Haalbaarheidsstudie elektrisch vervoer kunsttransporten
+                                Uitvoeren actieplan per onderstaande categorie. Het compenseren van alle CO2-uitstoot die vrijkomt bij
+                                zakelijk vliegverkeer</p>
+                        </div>
+                        <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                            <div class="d-flex align-items-end justify-content-between">
+                                <div class="d-flex align-items-center">
+                                      <div class="small">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-5">
+                    <div class="card h-100 shadow border-0">
+                        <div style="width:100%;height:0;padding-bottom:75%;position:relative;"><object data="https://giphy.com/embed/3oz8xRQiRlaS1XwnPW" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></object></div>
+                        <div class="card-body p-4 row">
+                            <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Bewustwording Green Team</h5></a>
+                            <p class="card-text mb-0"> Het museum heeft een Green Team dat bewustzijn creëert over duurzaamheidsvraagstukkken en wil van iedere medewerker een duurzaamheidsambassadeur maken.
+                                Organiseren van minimaal één activiteit
+                                waarin het thema energie centraal staat.</p>
+                        </div>
+                        <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                            <div class="d-flex align-items-end justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <div class="small">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between" >
+                <p style="color: black;">81,359 kWh in 2021</p>
+                <p style="color: black;">79,731 kWh doel voor 2022</p>
+                <p style="color: black;">45,000 kWh</p>
+            </div>
+            <div class="progress" style=" background-color: #d3d3d3">
+                <div class="progress-bar progress-bar-animated" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90.1%</div>
+            </div>
+            <p style="font-size: 10px; color: black;">Gebaseerd op het gemiddelde energieverbruik van 2022 dus tot heden</p>
+            <!-- Call to action-->
+            <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
+                <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
+                    <div class="mb-4 mb-xl-0">
+                        <div class="fs-3 fw-bold text-white">Haal kaartjes voor Het Scheepsvaartmuseum hier!</div>
+                        <div class="text-white-50">Met een online ticket heb je toegang tot zowel de vaste collectie van het museum als ook toegang tot het VOC-schip Amsterdam aan de museumsteiger.</div>
+                    </div>
+                    <div class="ms-xl-4">
+                        <div class="input-group mb-2">
+                            <a href="https://tickets.hetscheepvaartmuseum.nl/nl/tickets">
+                            <button class="btn btn-outline-light" id="button-tickets" type="button">kaartjes ></button>
+                            </a>
+                        </div>
+                        <div class="small text-white-50">Er is geen toeslag voor tijdelijke tentoonstellingen.</div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+    <div class="footrow--midtier" id="welcome-footer">
+        <svg class="footrow-lines" xmlns="http://www.w3.org/2000/svg" width="1439" height="210" viewBox="0 0 1439 210" version="1.1"><defs><polygon points="0.4 0.1 1440.4 0.1 1440.4 210.1 0.4 210.1"></polygon></defs><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-1.000000, -2970.000000)"><g transform="translate(0.000000, 2600.000000)"><g transform="translate(0.000000, 369.000000)"><g transform="translate(0.634990, 0.874891)"><mask fill="white"></mask><use fill="#00326E" fill-rule="nonzero"></use><g mask="url(#mask-2)" stroke="#009DFF" stroke-width="2"><g transform="translate(-196.813276, 2893.384183) rotate(19.000000) translate(196.813276, -2893.384183) translate(-4792.813276, -1712.115817)"><polygon points="8842.5 6337.9 2856.8 8818.4 377.5 2829.9 6363.2 349.4"></polygon><polygon points="9191.5 4583.9 4610 9167.4 28.5 4583.9 4610 0.4"></polygon><polygon points="8842.5 2829.9 6363.2 8818.4 377.5 6337.9 2856.8 349.4"></polygon><polygon points="1344.5 7865.9 7825.5 7865.9 7825.5 1388.9 1344.5 1388.9"></polygon><path d="M3715.5 88.4L5504.5 9079.4M2854.5 349.4L6365.5 8818.4M2065.5 775.4L7154.5 8392.4M1344.5 1388.9L7825.5 7865.9M775.5 2080.9L8394.5 7173.9M349 2857L8814 6366M349 6366L8814 2857M775.5 7173.9L8394.5 2080.9M1344.5 7865.9L7825.5 1388.9M2065.5 8392.4L7154.5 775.4M2854.5 8818.4L6365.5 349.4M3715.5 9079.4L5504.5 88.4M4588 9210.9L4588 43.9M2859.5 350.4L4608.5 9167.4M4586.5 9210.9L6339.5 393.9M6335.5 374L6335.5 8843M8842.5 6332.4L2859.5 349.4M1342 7848L8813 2851M8814 2856.5L349 2856.5M2858.5 349.4L9191.5 4580.4M1372.5 7827.4L6365.5 350.4M1372.5 7827.4L4613.5 0.4M7818 7852L6337 375M7825.5 7870.9L4584.5 43.9M7847.5 7827.4L2854.5 350.4M7821 7848L350 2851M8819.5 6384.9L1348.5 1387.9M356.5 2876.9L7827.5 1387.9M6361.5 349.4L28.5 4580.4M6360.5 349.4L377.5 6332.4M2832.5 8860.9L7825.5 1383.9M4591.5 9210.9L7832.5 1389.9M4586.5 9210.9L1349.5 1389.9M4580 9192L349 2853M0 4609L8821 2858M8819.5 2876.9L1348.5 1387.9M7827.5 1383.9L6.5 4624.9M8819.5 6374.9L4586.5 43.9M4608.5 0.4L2859.5 8813.4M4608.5 0.4L377.5 6331.4M9169.5 4624.9L1348.5 1383.9M7827.5 1387.9L356.5 6384.9M6343.5 8860.9L1350.5 1383.9M6332 8843L349 2860M350 2854L9163 4605M6339.5 8856.9L4586.5 43.9"></path></g></g></g></g></g></g></g></svg>
+        <div class="container">
+
+        </div>
     </div>
 </div>

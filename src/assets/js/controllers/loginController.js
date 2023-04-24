@@ -25,7 +25,7 @@ export class LoginController extends Controller{
      */
     async #setupView() {
         //await for when HTML is loaded, never skip this method call in a controller
-        this.#loginView = await super.loadHtmlIntoContent("html_views/login.html")
+        this.#loginView = await super.loadHtmlIntoDashboard("html_views/login.html")
 
         //from here we can safely get elements from the view via the right getter
         this.#loginView.querySelector(".btn").addEventListener("click", event => this.#handleLogin(event));

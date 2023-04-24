@@ -1,23 +1,49 @@
-<div class="container">
-    <div class="row justify-content-md-center">
-        <div class="col-md-5">
-            <h2 class="mb-3 mt-4">Inloggen</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-            <form class="login-form">
-                <div class="mb-3">
-                    <label for="exampleInputUsername">Gebruikersnaam</label>
-                    <input type="text" name="username" class="form-control" id="exampleInputUsername" aria-describedby="usernameHelp" placeholder="Vul gebruikersnaam in">
-                    <div id="usernameHelp" class="form-text"></div>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword" class="form-label">Wachtwoord</label>
-                    <input type="password" class="form-control" id="exampleInputPassword" placeholder="Vul wachtwoord in">
-                </div>
+    <title>Project Agile Development - Framework</title>
 
-                <div class="error mb-3 text-danger"></div>
+    <link rel="shortcut icon" type="image/jpg" href="favicon.ico"/>
 
-                <button type="submit" class="btn btn-primary">Login</button>
-            </form>
+    <!-- Load our stylesheets -->
+    <link href="../assets/vendors/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../assets/css/defaults.css" rel="stylesheet"/>
+    <link href="../assets/css/pages/auth.css" rel="stylesheet"/>
+
+    <!-- Load bootstrap, UI framework -->
+    <script src="../assets/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <!-- Only load the config of the API and the entry point of the app via regular script tags -->
+    <!-- Added .js files loaded via ES6 modules should not be added here but be referenced via ímport statement -->
+    <script src="api/config.js"></script>
+    <script src="assets/js/app.js" type="module"></script>
+</head>
+
+<body>
+<main class="form-signin">
+    <form>
+        <img class="mb-4" src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+        <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
         </div>
-    </div>
-</div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">© 2017–2021</p>
+    </form>
+</main>
+</body>

@@ -12,6 +12,9 @@ import { LoginController } from "./controllers/loginController.js"
 import { NavbarController }  from "./controllers/navbarController.js"
 import { UploadController }  from "./controllers/uploadController.js"
 import { WelcomeController }  from "./controllers/welcomeController.js"
+import { SidebarController }  from "./controllers/sidebarController.js"
+import { DashboardheaderController } from "./controllers/dashboardheaderController.js"
+import {dashboardController} from "./controllers/dashboardController.js";
 
 export class App {
     //we only need one instance of the sessionManager, thus static use here
@@ -24,11 +27,13 @@ export class App {
     static CONTROLLER_LOGOUT = "logout";
     static CONTROLLER_WELCOME = "welcome";
     static CONTROLLER_UPLOAD = "upload";
+    static CONTROLLER_REGISTER = "register";
+    static CONTROLLER_DASHBOARD = "dashboard";
 
     constructor() {
         //Always load the navigation
-        App.loadController(App.CONTROLLER_NAVBAR);
 
+        new NavbarController();
         //Attempt to load the controller from the URL, if it fails, fall back to the welcome controller.
         App.loadControllerFromUrl(App.CONTROLLER_WELCOME );
     }
@@ -46,13 +51,18 @@ export class App {
         if (controllerData && Object.entries(controllerData).length !== 0) {
             console.log(controllerData);
         }
+        console.log(name, "here")
 
         //load right controller based on the passed name to this function
         switch (name) {
+            case App.CONTROLLER_DASHBOARD:
+                new dashboardController();
+                break;
+
             case App.CONTROLLER_NAVBAR:
                 new NavbarController();
                 break;
-
+c
             case App.CONTROLLER_LOGIN:
                 App.setCurrentController(name);
                 App.isLoggedIn(() => new WelcomeController(), () => new LoginController());
@@ -65,11 +75,16 @@ export class App {
 
             case App.CONTROLLER_WELCOME:
                 App.setCurrentController(name);
-                App.isLoggedIn(() => new WelcomeController(), () => new LoginController());
+                new dashboardController();
+                new WelcomeController();
                 break;
 
             case App.CONTROLLER_UPLOAD:
                 App.isLoggedIn(() => new UploadController(),() => new LoginController());
+                break;
+
+            case App.CONTROLLER_REGISTER:
+                App.setCurrentController(name);
                 break;
 
             default:

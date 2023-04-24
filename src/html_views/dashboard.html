@@ -1,0 +1,350 @@
+<div class="container-dashboard" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <div id="content">
+        <section class="py-3 explain-box rounded" id="">
+            <div class="container px-5 my-5">
+
+                <div class="text-explain-box row justify-content-between d-flex flex-wrap">
+                    <div class="col mb-5 h-100">
+                        <p class="font-weight-bold"><strong>Co2 uitstoot (Card)</strong></p>
+                        <p>Hier zie je het aantal bomen dat er nodig, om de uitstoot Co2 te compenseren. De energie is
+                            het energie-verbruik per uur. Co2 opname van de bomen is over 1 jaar.</p>
+                    </div>
+                    <div class="col mb-5 h-100">
+                        <p class="font-weight-bold"><strong>Real-Time (Cards)</strong></p>
+                        <p>Dit zijn de kaarten bovenin van het dashboard. Hier zie je het realtime energie verbruik per
+                            uur.</p>
+                    </div>
+                    <div class="col mb-5 ml-4 h-100">
+                        <p class="h1 font-weight-bold"></p>
+                    </div>
+                    <div class="col mb-5 h-100">
+                        <p class="font-weight-bold"><strong>Voorkeuren en Graph</strong></p>
+                        <p>Je kan je voorkeuren invullen in de verschillende boxen. Hier word de grafiek op gebaseerd
+                            wanneer je op de knop "laden" drukt.</p>
+                    </div>
+                    <div class="col mb-5 h-100">
+                        <p class="font-weight-bold"><strong>Resultaat energieverbruik en Ijsberg</strong></p>
+                        <p>Onder de grafiek krijg je een weergave van de ijskappen te zien. Als je een periode en datum
+                            selecteert, vergelijkt het met de voorgaande periode of er meer of minder energie verbruikt
+                            is!</p>
+                    </div>
+                </div>
+                <h1 class="text-white dashboard-title"><strong>&#8505; dashboard uitleg</strong></h1>
+            </div>
+        </section>
+        <div class="w3-animate-left container-fluid mt-5">
+            <!-- Page Heading -->
+
+            <!-- Content Row -->
+            <div class="row">
+
+                <!-- Kwh (Monthly) Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-info shadow h-100 py-2 " id="dashboard-topCards">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Verbruik KwH (Dagelijks)
+                                    </div>
+                                    <div id="electricityDay" class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Verbruik KwH (Realtime) Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-info shadow h-100 py-2" id="dashboard-topCards-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Verbruik KwH
+                                        (Realtime/uur)
+                                    </div>
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col-auto">
+                                            <div id="realtimeDayElectricity"
+                                                 class="h5 mb-0 mr-3 font-weight-bold text-gray-800"></div>
+                                        </div>
+                                        <div class="col">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- L Gas (Monthly) Card Example -->
+                <div class="col-xl-6 col-md-6 mb-4">
+                    <div class="card border-left-success shadow h-100 py-2" id="dashboard-topCards-3">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-4 mr-1">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                        Uitstoot Co2
+                                    </div>
+                                    <div id="amount_Co2" class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                </div>
+                                <div class="col-8 mr-4">
+                                    <div class="row">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            Aantal bomen nodig &#127795;
+                                        </div>
+                                        <div id="amount_trees" class="h5 mb-0 font-weight-bold text-gray-800"></div>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Row -->
+            <div class="row">
+                <!-- Area Chart -->
+                <div class="col-xl-4 col-lg d-flex align-items-lg-stretch">
+                    <div class="card col-12 shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Voorkeur Overview</h6>
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body" style="display: block; height: auto; width: 100%;">
+                            <div class="col">
+                                <div class="row">
+                                    <select class="w-25 m-lg-3" name="dateElectricity" id="sortElectricity">
+                                        <option value="years">Jaren</option>
+                                        <option value="year">Maanden</option>
+                                        <option value="month">Dagen</option>
+                                        <option selected="selected" value="day">Uren</option>
+                                    </select>
+                                    <p class="font-weight-bold text-dark year-preference-text">
+                                        Dit kan even duren. Hij pakt alle data van de gemeten afgelopen jaren.
+                                    </p>
+                                    <div class="date-box-preference">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1 mt-2">
+                                            Voorkeur datum
+                                        </div>
+                                        <div class="col">
+                                            <div class="preference-line">
+                                                <select name="DayElectricity" id="sortDayElectricity">
+                                                </select>
+                                                <select name="monthElectricity" id="sortMonthElectricity">
+                                                    <option value="1" selected="selected">Januari</option>
+                                                    <option value="2">Februari</option>
+                                                    <option value="3">Maart</option>
+                                                    <option value="4">April</option>
+                                                    <option value="5">Mei</option>
+                                                    <option value="6">Juni</option>
+                                                    <option value="7">Juli</option>
+                                                    <option value="8">Augustus</option>
+                                                    <option value="9">September</option>
+                                                    <option value="10">October</option>
+                                                    <option value="11">November</option>
+                                                    <option value="12">December</option>
+                                                </select>
+                                                <select name="yearElectricity" id="sortYearElectricity">
+                                                    <option value="2018" selected="selected">2018</option>
+                                                    <option value="2019">2019</option>
+                                                    <option value="2020">2020</option>
+                                                    <option value="2021">2021</option>
+                                                    <option value="2022">2022</option>
+                                                </select>
+                                            </div>
+                                            <div class="custom-control custom-switch">
+                                                <input type="checkbox" class="custom-control-input" id="customSwitches">
+                                                <label class="custom-control-label" for="customSwitches">Data
+                                                    vergelijken</label>
+                                            </div>
+                                        </div>
+                                        <div class="extraLine">
+                                            <select name="DayElectricity" id="compareDayElectricity">
+                                            </select>
+                                            <select name="monthElectricity" id="compareMonthElectricity">
+                                                <option value="1" selected="selected">Januari</option>
+                                                <option value="2">Februari</option>
+                                                <option value="3">Maart</option>
+                                                <option value="4">April</option>
+                                                <option value="5">Mei</option>
+                                                <option value="6">Juni</option>
+                                                <option value="7">Juli</option>
+                                                <option value="8">Augustus</option>
+                                                <option value="9">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
+                                            </select>
+                                            <select name="yearElectricity" id="compareYearElectricity">
+                                                <option value="2018" selected="selected">2018</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2022">2022</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="roomBox">
+                                <hr>
+                                <div class="text-xs  text-warning text-uppercase mb-1 mt-4">
+                                    Kamers
+                                </div>
+                                <select id="selectRoom">
+                                    <option>Algemeen</option>
+                                </select>
+                            </div>
+                            <hr>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input id="lineButton" class="form-check-input" type="radio" name=”graphType”
+                                           value="line" checked>Line</input>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name=”graphType”
+                                           value="bar">Bar</input>
+                                </div>
+                            </div>
+                            <hr>
+                            <button id="loadButton" class="btn btn-primary mt-4">Laden</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Area Chart -->
+                <div class="col-xl-8 col-lg">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Verbruik Energie Overview</h6>
+
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <canvas id="myAreaChart" width="1078" height="380" class="chartjs-render-monitor"
+                                    style="display: block; height: 380px; width: 1078px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Area Chart -->
+        <div class="col-xl-8 col-lg justify-content-center" style="height: auto; width: 98.5%; margin: 0 .7%;">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Resultaat van energieverbruik</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body" id="resultCard" style="background-color: rgba(0,0,0,.03);">
+                    <p id="resultText"
+                       style="position: absolute; width: 60%; z-index: 3; text-align: center; margin: 0 20%; color: #0d6efd;">
+                        Selecteer boven een datum en een periode en klik op laden om te zien of het energieverbruik
+                        verminderd is!</p>
+                    <div class="d-flex justify-content-around iceberg-container"
+                         style="z-index: 0; position: absolute;">
+                        <img src="../assets/img/iceberg.png"
+                             class="img-fluid iceberg"
+                             style="z-index: 0; position: relative; margin-top: -5%; height: auto; width: auto; min-width: 100px">
+                        <img src="../assets/img/iceberg.png"
+                             class="img-fluid iceberg"
+                             style="z-index: 0; position: relative; margin-top: -5%; height: auto; width: auto; min-width: 100px">
+                    </div>
+
+                    <img src="../assets/img/Water.png" style="width:100%; height: 15em; margin-top: 7em; z-index: 1;">
+
+                    <div class="ice-platform-container"
+                         style="z-index: 2; display: flex; position: absolute; width: 96%; margin-top: 15em; justify-content: space-around; flex-wrap: wrap; object-fit: contain;">
+                        <img src="../assets/img/ice-platform.png"
+                             class="img-fluid ice-platform"
+                             style="max-width: 200px; min-width: 50px">
+                        <img src="../assets/img/ice-platform.png"
+                             class="img-fluid ice-platform"
+                             style="max-width: 200px; min-width: 50px">
+                        <img src="../assets/img/ice-platform.png"
+                             class="img-fluid ice-platform"
+                             style="max-width: 200px; min-width: 50px">
+                        <img src="../assets/img/ice-platform.png"
+                             class="img-fluid ice-platform"
+                             style="max-width: 200px; min-width: 50px">
+                        <img src="../assets/img/ice-platform.png"
+                             class="img-fluid ice-platform"
+                             style="max-width: 200px; min-width: 50px">
+                        <img src="../assets/img/ice-platform.png"
+                             class="img-fluid ice-platform"
+                             style="max-width: 200px; min-width: 50px">
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- /.container-fluid -->
+        <div>
+            <svg class="waves mt-5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill=#ffffff />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill=#021964 />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill=#009dff />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill=#00326e />
+                </g>
+            </svg>
+        </div>
+        <section class="pt-5 pb-5" id="quote-box" style="height: 200px">
+            <div class="has-animation animation-ltr" data-delay="10">
+                <p class="bigger text-white text-center">Gebruik</p>
+            </div>
+            <div class="py-2" id="box-underwave">
+            </div>
+            <div class="py-5" id="features">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col">
+                            <div class="text-center">
+                                <div class="text-light fs-4 mb-4 fst-italic">kWh per dag / verdieping</div>
+                            </div>
+                            <hr class="bg-white">
+                            <div class="row">
+                                <div class="col">
+                                    <div style="margin-left: 100px; display: block; height: 400px; width: 400px;">
+                                        <canvas id="pie_chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="text-center">
+                                <div class="text-light fs-4 mb-4 fst-italic">kWh per dag / kamer</div>
+                            </div>
+                            <hr class="bg-white">
+                            <div style="margin-left: 100px; display: block; height: 400px; width: 400px;">
+                                <canvas id="second_chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

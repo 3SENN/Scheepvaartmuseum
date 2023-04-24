@@ -8,15 +8,19 @@
 import {RoomsExampleRepository} from "../repositories/roomsExampleRepository.js";
 import {App} from "../app.js";
 import {Controller} from "./controller.js";
+import {DataRepository} from "../repositories/dataRepository.js";
+
+
 
 export class WelcomeController extends Controller{
     #roomExampleRepository
     #welcomeView
+    #dataRepository
 
     constructor() {
         super();
         this.#roomExampleRepository = new RoomsExampleRepository();
-
+        this.#dataRepository = new DataRepository();
         this.#setupView();
     }
 
@@ -27,33 +31,15 @@ export class WelcomeController extends Controller{
      */
     async #setupView() {
         //await for when HTML is loaded
-        this.#welcomeView = await super.loadHtmlIntoContent("html_views/welcome.html")
+        this.#welcomeView = await super.loadHtmlIntoDashboard("html_views/welcome.html")
 
         //from here we can safely get elements from the view via the right getter
-        this.#welcomeView.querySelector("span.name").innerHTML = App.sessionManager.get("username");
+        // const anchors = this.#welcomeView.querySelectorAll(".container");
+        this.#welcomeView.querySelector("#dashboardButton").addEventListener("click",  event => {
+            App.loadController("dashboard");
+        });
+     }
 
-        //for demonstration a hardcoded room id that exists in the database of the back-end
-        this.#fetchRooms(1256);
-    }
 
-    /**
-     * async function that retrieves a room by its id via the right repository
-     * @param roomId the room id to retrieve
-     * @private
-     */
-    async #fetchRooms(roomId) {
-        const exampleResponse = this.#welcomeView.querySelector(".example-response")
 
-        try {
-            //await keyword 'stops' code until data is returned - can only be used in async function
-            const roomData = await this.#roomExampleRepository.get(roomId);
-
-            exampleResponse.innerHTML = JSON.stringify(roomData, null, 4);
-        } catch (e) {
-            console.log("error while fetching rooms", e);
-
-            //for now just show every error on page, normally not all errors are appropriate for user
-            exampleResponse.innerHTML = e;
-        }
-    }
 }

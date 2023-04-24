@@ -6,12 +6,16 @@
 
 import { App } from "../app.js";
 import {Controller} from "./controller.js";
+import {TranslationRepository} from "../repositories/translationRepository.js";
 
 export class NavbarController extends Controller{
     #navbarView
+    #translationRepository
 
     constructor() {
         super();
+        this.#translationRepository = new TranslationRepository();
+
         this.#setupView();
     }
 
@@ -28,7 +32,7 @@ export class NavbarController extends Controller{
         const anchors = this.#navbarView.querySelectorAll("a.nav-link");
 
         //set click listener on each anchor
-        anchors.forEach(anchor => anchor.addEventListener("click", (event) => this.#handleClickNavigationItem(event)))
+        anchors.forEach(anchor => anchor.addEventListener("click", (event) => NavbarController.#handleClickNavigationItem(event)))
     }
 
     /**
@@ -37,7 +41,7 @@ export class NavbarController extends Controller{
      * @returns {boolean} - to prevent reloading
      * @private
      */
-    #handleClickNavigationItem(event) {
+    static #handleClickNavigationItem(event) {
         //Get the data-controller from the clicked element (this)
         const clickedAnchor = event.target;
         const controller = clickedAnchor.dataset.controller;
@@ -53,6 +57,24 @@ export class NavbarController extends Controller{
         App.loadController(controller);
 
         //Return false to prevent reloading the page
+        return false;
+    }
+
+    async #handleLangChange(event) {
+        const language = event.target.value;
+        const page = window.location.hash.replaceAll("#", "");
+//Object { translation: "YOOO", htmlDataId: "test" }
+        try {
+            const translations = await this.#translationRepository.getTranslation(page, language);
+
+            for(let i=0; i<translations.length; i++) {
+                console.log(translations[i].htmlDataId);
+                this.#translationRepository.updateHtml(translations[i].htmlDataId, translations[i].translation);
+            }
+        } catch (e) {
+            console.log(e)
+        }
+
         return false;
     }
 }

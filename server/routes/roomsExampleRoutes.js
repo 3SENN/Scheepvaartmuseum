@@ -1,3 +1,5 @@
+const axios = require("axios");
+
 /**
  * This class contains ExpressJS routes specific for the roomsExample entity
  * this file is automatically loaded in app.js
@@ -19,6 +21,9 @@ class RoomsExampleRoutes {
 
         //call method per route for the rooms entity
         this.#getRoomById()
+        // this.#getAllRooms()
+        this.#test()
+        this.#test2()
     }
 
 
@@ -27,6 +32,18 @@ class RoomsExampleRoutes {
      * get request, data is sent by client via url - req.params
      * @private
      */
+
+    // #getAllRooms(){
+    //     this.#app.get("",async (req, res) => {
+    //         try {
+    //             const data = await axios.get('https://svm.hbo-ict.cloud/api/v1/rooms')
+    //             res.json(data.data)
+    //         } catch (e) {
+    //             res.status(this.#errorCodes.BAD_REQUEST_CODE).json({reason: e});
+    //         }
+    //     })
+    // }
+
     #getRoomById() {
         this.#app.get("/rooms_example/:roomId", async (req, res) => {
             try {
@@ -42,6 +59,22 @@ class RoomsExampleRoutes {
             }
         });
     }
+    #test() {
+        this.#app.get("/test",  (req, res) => {
+                res.status(this.#errorCodes.HTTP_OK_CODE).json({"id":8 +"==>"})
+        });
+    }
+
+    #test2() {
+        this.#app.get("/testt", async (req, res) => {
+            const id = await this.#databaseHelper.handleQuery({
+                query: `SELECT *
+                        FROM user`});
+            res.status(this.#errorCodes.HTTP_OK_CODE).json({id})
+            })
+        }
+
+
 }
 
 module.exports = RoomsExampleRoutes

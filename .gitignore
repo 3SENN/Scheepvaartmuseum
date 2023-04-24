@@ -1,3 +1,8 @@
 /server/node_modules/
 /.idea/
 /src/uploads/
+./package-lock.json
+/server/package-lock.json
+/server/cypress/support/commands.js
+/server/cypress/fixtures/example.json
+/server/cypress/support/index.js

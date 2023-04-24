@@ -199,3 +199,26 @@ https://getbootstrap.com/docs/5.0/utilities/text
 Er kan nog veel meer met Bootstrap. De bovenstaande links zijn een aantal voorbeelden van de documentatie. 
 
 
+## Troubleshooting
+
+_Bij het runnen van de server krijg ik de melding port already in use:_
+
+Eindig het proces node in taakbeheer en draai de server nog een keer.
+
+_Ik krijg errors in de console:_
+
+![Client error](readme_assets_gitlab/error_example_client.png)
+
+Het is hierbij van belang dat je goed kijkt wat er misgaat. Het kan namelijk zoals in dit geval zo zijn dat er 
+ook iets in het servergedeelte niet goed staat:
+
+
+![Server error](readme_assets_gitlab/error_example_server.png)
+
+_Connection limit error:_
+
+https://www.youtube.com/watch?v=e8psB6jmDYs&list=PLvltGXy557e6KYqvUltMopI5udp8i6GaK&index=7&ab_channel=HBO-ICT
+
+## Deployen naar PAD Cloud
+- https://www.youtube.com/watch?v=g38Nh6JWrGc&list=PLvltGXy557e6KYqvUltMopI5udp8i6GaK&index=6&ab_channel=HBO-ICT
+- Nooit `node_modules` uploaden!

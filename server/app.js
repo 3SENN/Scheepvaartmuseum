@@ -12,6 +12,9 @@ const fileUpload = require("express-fileupload");
 const errorcodes = require("./framework/utils/httpErrorCodes")
 const path = require("path");
 
+//config env vars
+require('dotenv').config({path: './.env'});
+
 //front-end as static directory
 app.use(express.static(path.join(__dirname, '../src')));
 
